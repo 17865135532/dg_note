@@ -4,6 +4,70 @@ https://blog.csdn.net/keep_on_growing/article/details/82353632
 
 https://blog.csdn.net/LeonTom/article/details/81289326
 
+https://blog.csdn.net/lcanlup/article/details/84635625
+
+
+
+1、centos7安装卸载python3,pip3
+
+```
+
+yum安装python3
+    yum install epel-release -y
+    yum install https://centos7.iuscommunity.org/ius-release.rpm -y
+    yum install python36 u -y
+    ln -s /bin/python3.6 /bin/python3           #创建python3的连接符
+ 
+编译安装python3
+    https://www.python.org/ftp/python/3.5.3/Python-3.5.3.tgz
+    2.制作安装文件
+    mkdir python3.5
+ 
+    cd python3.5
+    pwd
+ 
+    3.解压到当前文件
+    tar -zxvf Python-3.5.3.tgz
+ 
+    4../configure
+    5.make
+    6.安装
+    make install  或者 sudo make install 成功！
+    
+ 
+编译安装python3
+    cd Python-3.6.2
+    ./configure --with-ssl
+    make
+    sudo make install
+    解决pip3不能使用，安装时添加--with--ssl
+```
+
+
+
+```
+安装pip3
+        1.首先找到pip3的位置(在python3.6的安装包内)
+        cd /usr/local/bin
+        ls      (这里可以看见pip3.6的文件了)
+ 
+        ln -s /usr/local/bin/pip3.6 /bin/pip3       #创建pip3命令的连接符
+        pip3 -v
+        完成！
+
+```
+
+
+
+```
+卸载python3
+      rpm -qa|grep python3|xargs rpm -ev --allmatches --nodeps       卸载pyhton3
+      whereis python3 |xargs rm -frv           删除所有残余文件
+      成功卸载！
+      whereis   python       查看现有安装的python
+
+```
+
 
 
 
